@@ -29,8 +29,8 @@
 
         .heart {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             background: radial-gradient(circle, #ff4d4d, #ff1a1a);
             transform: rotate(-45deg);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -42,29 +42,29 @@
         .heart:after {
             content: "";
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             background: radial-gradient(circle, #ff4d4d, #ff1a1a);
             border-radius: 50%;
         }
 
         .heart:before {
-            top: -75px;
+            top: -100px;
             left: 0;
         }
 
         .heart:after {
-            left: 75px;
+            left: 100px;
             top: 0;
         }
 
         .heart-shadow {
             position: absolute;
-            top: 180px;
+            top: 230px;
             left: 50%;
             transform: translateX(-50%);
-            width: 150px;
-            height: 25px;
+            width: 200px;
+            height: 30px;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 50%;
             filter: blur(12px);
@@ -78,11 +78,11 @@
 
         .photo {
             margin: 0 auto 20px;
-            width: 220px;
-            height: 220px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             overflow: hidden;
-            border: 10px solid #fff;
+            border: 12px solid #fff;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
@@ -93,11 +93,11 @@
         }
 
         .text {
-            font-size: 32px;
+            font-size: 40px;
             color: #fff;
-            font-weight: 600;
+            font-weight: 700;
             font-family: 'Great Vibes', cursive;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
             margin-bottom: 10px;
             animation: fadeInText 2s ease-in forwards 0.5s;
         }
@@ -162,84 +162,54 @@
             }
         }
 
-    /* Media query untuk layar kecil (smartphone) */
-    @media (max-width: 768px) {
-        .container {
-            width: 90%;
-            padding: 10px;
-            font-size: 14px;
+        @media (max-width: 768px) {
+            .heart {
+                width: 150px;
+                height: 150px;
+            }
+
+            .heart:before,
+            .heart:after {
+                width: 150px;
+                height: 150px;
+            }
+
+            .heart-shadow {
+                width: 150px;
+                height: 25px;
+            }
+
+            .photo {
+                width: 220px;
+                height: 220px;
+            }
+
+            .text {
+                font-size: 32px;
+            }
         }
 
-        .heart {
-            width: 100px;
-            height: 100px;
-        }
+        @media (max-width: 480px) {
+            .heart {
+                width: 100px;
+                height: 100px;
+            }
 
-        .heart:before,
-        .heart:after {
-            width: 100px;
-            height: 100px;
-        }
+            .heart:before,
+            .heart:after {
+                width: 100px;
+                height: 100px;
+            }
 
-        .heart-shadow {
-            width: 100px;
-            height: 20px;
-        }
+            .photo {
+                width: 150px;
+                height: 150px;
+            }
 
-        .photo {
-            width: 150px;
-            height: 150px;
-            border: 8px solid #fff;
+            .text {
+                font-size: 24px;
+            }
         }
-
-        .text {
-            font-size: 24px;
-        }
-
-        .button {
-            padding: 8px 16px;
-            font-size: 16px;
-        }
-
-        .message {
-            font-size: 16px;
-            padding: 15px;
-        }
-    }
-
-    /* Media query untuk layar lebih kecil (extra small devices) */
-    @media (max-width: 480px) {
-        .heart {
-            width: 80px;
-            height: 80px;
-        }
-
-        .heart:before,
-        .heart:after {
-            width: 80px;
-            height: 80px;
-        }
-
-        .photo {
-            width: 120px;
-            height: 120px;
-        }
-
-        .text {
-            font-size: 20px;
-        }
-
-        .message {
-            font-size: 14px;
-            padding: 10px;
-        }
-
-        .button {
-            font-size: 14px;
-            padding: 6px 12px;
-        }
-    }
-
     </style>
     <script>
         function showPhoto() {
@@ -254,11 +224,10 @@
     </script>
 </head>
 <body>
-    <!-- YouTube Audio Embed dengan Autoplay dan Loop -->
     <iframe width="0" height="0" style="display:none" 
-        src="https://youtu.be/2XUtjNcS_uQ?si=VadiGF9dqHnk1iIO" 
+        src="https://youtu.be/bS3fuZQxkZk?si=JBr8TSiOEpMFm9Xp" 
         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    
+
     <div class="container">
         <div class="heart" onclick="showPhoto()">
             <div class="heart-shadow"></div>
