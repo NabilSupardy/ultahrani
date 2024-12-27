@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Birthday Transition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1f1f1f, #3d3d3d, #0a0a0a);
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            perspective: 1200px;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 3s ease-in-out;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .heart {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #ff4d4d, #ff1a1a);
+            transform: rotate(-45deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #ff4d4d, #ff1a1a);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -75px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 75px;
+            top: 0;
+        }
+
+        .heart-shadow {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            filter: blur(12px);
+        }
+
+        .photo-container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .photo {
+            margin: 0 auto 20px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 10px solid #fff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            font-size: 32px;
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            animation: fadeInText 2s ease-in forwards 0.5s;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background: #ff4d4d;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background: #ff1a1a;
+        }
+
+        .message-container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .message {
+            font-size: 20px;
+            color: #fff;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInText 2s ease-in forwards 0.5s;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    /* Media query untuk layar kecil (smartphone) */
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+        }
+
+        .heart:before,
+        .heart:after {
+            width: 100px;
+            height: 100px;
+        }
+
+        .heart-shadow {
+            width: 100px;
+            height: 20px;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            border: 8px solid #fff;
+        }
+
+        .text {
+            font-size: 24px;
+        }
+
+        .button {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+
+        .message {
+            font-size: 16px;
+            padding: 15px;
+        }
+    }
+
+    /* Media query untuk layar lebih kecil (extra small devices) */
+    @media (max-width: 480px) {
+        .heart {
+            width: 80px;
+            height: 80px;
+        }
+
+        .heart:before,
+        .heart:after {
+            width: 80px;
+            height: 80px;
+        }
+
+        .photo {
+            width: 120px;
+            height: 120px;
+        }
+
+        .text {
+            font-size: 20px;
+        }
+
+        .message {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .button {
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+    }
+
+    </style>
+    <script>
+        function showPhoto() {
+            document.querySelector('.heart').style.display = 'none';
+            document.querySelector('.photo-container').style.display = 'block';
+        }
+
+        function showMessage() {
+            document.querySelector('.photo-container').style.display = 'none';
+            document.querySelector('.message-container').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- YouTube Audio Embed dengan Autoplay dan Loop -->
+    <iframe width="0" height="0" style="display:none" 
+        src="https://youtu.be/2XUtjNcS_uQ?si=VadiGF9dqHnk1iIO" 
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    <div class="container">
+        <div class="heart" onclick="showPhoto()">
+            <div class="heart-shadow"></div>
+        </div>
+        <div class="photo-container">
+            <div class="photo">
+                <img src="rannn.jpg" alt="Foto Cewek Saya">
+            </div>
+            <div class="text">Selamat Ulang Tahun Sayangku</div>
+            <button class="button" onclick="showMessage()">Lanjut</button>
+        </div>
+        <div class="message-container">
+            <div class="message">
+                Semoga Apa yang di inginkan tercapai semua, dan rajin-rajin ibadah nya jangan malas-malas, makan nya jangan telat yah, begadang nya di kurangi, I Love You so much....
+            </div>
+        </div>
+    </div>
+</body>
+</html>
